@@ -46,7 +46,8 @@
           //so we can work with it        
           var d = new Date(heading.timestamp);
            //Then replace the page's content with the        
-          //current acceleration retrieved from the API        
+          //current acceleration retrieved from the API
+          hc.innerHTML = "Timestamp: " + d.toLocaleString(); 
           hc.innerHTML = "<b>Magnetic Heading:</b> " +          heading.magneticHeading +          "<br /><b>True Heading:</b> " + heading.trueHeading +          "<br /><b>Heading Accuracy:</b> " +          heading.headingAccuracy + "<br /><b>Timestamp:</b> " +          d.toLocaleString();      }
       function onHeadingError(compassError) {        
           if (compassError.code ==          CompassError.COMPASS_NOT_SUPPORTED) 
@@ -54,8 +55,7 @@
               hc.innerHTML = "Compass not available."          
               alert("Compass not supported.");          
               hasCompass == false;        } 
-          else if (compassError.code ==          
-                   CompassError.COMPASS_INTERNAL_ERR) {         
+          else if (compassError.code == CompassError.COMPASS_INTERNAL_ERR) {         
               alert("Compass Internal Error");        } 
           else {          alert("Unknown heading error!");       
                }      
@@ -63,10 +63,13 @@
     </script>  
     </head>  
     <body onload="onBodyLoad()">    
-        <h1>Example 13-1</h1>    
+        <h1>Actividad 10. Brujula</h1>    
         <p>This is an Apache PhoneGap application that measures        
-            device heading using the Compass API.<br />    
+            device heading using the Compass API.<br />  
+            <p>Verónica Aguirre Frías.<br />  
             <input type="button" value="Measure Heading"      onclick="getHeading();"></p>    
         <p id="headingInfo">Nothing to see here (yet), click the      button.</p>  
     </body> 
 </html>
+
+         
