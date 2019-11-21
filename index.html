@@ -47,7 +47,7 @@
           var d = new Date(heading.timestamp);
            //Then replace the page's content with the        
           //current acceleration retrieved from the API
-          hc.innerHTML = "Timestamp: " + d.toLocaleString(); 
+          
           hc.innerHTML = "<b>Magnetic Heading:</b> " +          heading.magneticHeading +          "<br /><b>True Heading:</b> " + heading.trueHeading +          "<br /><b>Heading Accuracy:</b> " +          heading.headingAccuracy + "<br /><b>Timestamp:</b> " +          d.toLocaleString();      }
       function onHeadingError(compassError) {        
           if (compassError.code ==          CompassError.COMPASS_NOT_SUPPORTED) 
